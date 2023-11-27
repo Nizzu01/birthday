@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+        }
+        #message {
+            margin: 50px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        #surprise-btn, #next-photo-btn, #virtual-gift-btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+            background-color: #ff69b4;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        #surprise, #virtual-gift {
+            display: none;
+        }
+        #birthday-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="message">
+        <h1>Happy Birthday!</h1>
+        <p>Dear [Asra],</p>
+        <p>Wishing you a day filled with joy, laughter, and all the things you love. May this year bring you happiness and success.</p>
+        <p>Best wishes, [Your Name]</p>
+        <img id="birthday-img" src="https://example.com/image1.jpg" alt="Birthday Image">
+        <button id="surprise-btn" onclick="showSurprise()">Click for a Special Surprise!</button>
+        <button id="next-photo-btn" onclick="showNextImage()">Next Photo</button>
+        <button id="virtual-gift-btn" onclick="showVirtualGift()">Open Virtual Gift</button>
+        <div id="surprise">
+            <p>🎉🎁🥳 Surprise! 🥳🎁🎉</p>
+            <p>Hope your day is as special as you are!</p>
+        </div>
+        <div id="virtual-gift">
+            <p>🎁✨ Virtual Gift ✨🎁</p>
+            <p>Here's a virtual gift to brighten your day! 🌟</p>
+        </div>
+    </div>
+
+    <script>
+        let currentImageIndex = 0;
+        const images = [
+            "https://example.com/image1.jpg",
+            "https://example.com/image2.jpg",
+            // Add more image URLs as needed
+        ];
+
+        function showNextImage() {
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            document.getElementById("birthday-img").src = images[currentImageIndex];
+        }
+
+        function showSurprise() {
+            document.getElementById("surprise").style.display = "block";
+        }
+
+        function showVirtualGift() {
+            document.getElementById("virtual-gift").style.display = "block";
+        }
+    </script>
+</body>
+</html>
